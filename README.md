@@ -1,6 +1,6 @@
 # python-escolher-numero
 
-![](logo/icon-png.png)
+<img src="logo/v1/logo-v1-svg.svg" alt="logo-v1" height="100">
 
 Um programa de linha de comandos escrito em [python](https://www.python.org/).
 
@@ -32,3 +32,7 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 > **AVISO:**  
 > Este *python script* foi compilado para executável do Windows pelo software [*PyInstaller*](https://pypi.org/project/PyInstaller/).
+
+---
+
+[Ver licença](LICENSE)
