@@ -7,7 +7,9 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 ## Download
 
-### Windows file hash
+### [Windows](https://github.com/a21989/python-escolher-numero/raw/master/python-escolher-numero.exe)
+
+#### File Hash
 
 | Name | Hash Value |
 | ---: | :--- |
