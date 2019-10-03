@@ -1,5 +1,7 @@
 # python-escolher-numero
 
+![](logo/icon-png.png)
+
 Um programa de linha de comandos escrito em [python](https://www.python.org/).
 
 Inspirado numa aplicação de smartphone utilizada pelo meu professor da disciplina *Biologia e Geologia* no 11º ano.  
