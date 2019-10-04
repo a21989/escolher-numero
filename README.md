@@ -1,6 +1,6 @@
 # python-escolher-numero
 
-<img src="logo/v1/logo-v1-svg.svg" alt="logo-v1" height="100">
+<img src="logo/v1/logo-v1-svg-compressed.svg" alt='logo-v1 ("42")' height="100">
 
 Um programa de linha de comandos escrito em [python](https://www.python.org/).
 
@@ -35,4 +35,5 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 ---
 
-[Ver licença](LICENSE)
+This project is licensed under *The Unlicense*.  
+[View license](LICENSE)
