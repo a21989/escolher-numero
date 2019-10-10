@@ -28,7 +28,7 @@ acao = input()
 
 
 
-# Se a ação escolhida tiver sido escolher um número aleatório
+# Se a ação escolhida tiver sido "escolher um número aleatório"
 if acao == '1':
     print('\nQuantos números quer?')
     drawTimes = input()
@@ -47,7 +47,7 @@ Número(s) obtidos:
     
 
 
-# Se a ação escolhida tiver sido mandar uma moeda ao ar
+# Se a ação escolhida tiver sido "mandar uma moeda ao ar"
 if acao == '2':
     print('''
 ===================================
@@ -60,18 +60,18 @@ Cara ou coroa?
 o número correspondente)
 ===================================
 ''')
-    cc12 = input()
+    ccInput = input()
     # Faz a escolha na linha de baixo
-    cc = random.choice(['cara', 'coroa'])
+    ccRandom = random.choice(['cara', 'coroa'])
 
     # Se a face escolhida (de acordo com o dicionário ccDict) corresponder com a face obtida, ganhou. Caso contrário, perdeu.
-    if cc == ccDict[cc12]:
-        ganhouperdeu = 'Ganhaste'
+    if ccRandom == ccDict[ccInput]:
+        ganhouperdeuOutput = 'Ganhaste'
     else:
-        ganhouperdeu = 'Perdeste'
+        ganhouperdeuOutput = 'Perdeste'
 
     print('''
 ===============================''')
-    print('Foi escolhida ' + ccDict[cc12] + '.')
-    print(ganhouperdeu + ', pois calhou ' + cc + '.')
+    print('Foi escolhida ' + ccDict[ccInput] + '.')
+    print(ganhouperdeuOutput + ', pois calhou ' + ccRandom + '.')
     print('===============================')
