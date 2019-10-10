@@ -3,16 +3,6 @@
 import random
 
 
-
-# Dicionário de cara e coroa.
-# 1 e 2 são iguais a cara e coroa, respetivamente. Isto não é uma boa explicação, mas é mais ou menos assim que funciona.
-ccDict = {
-    '1': 'cara',
-    '2': 'coroa'
-}
-
-
-
 print('''
 =========================================================
 Que ação pretende executar?
@@ -47,6 +37,16 @@ Número(s) obtidos:
     
 
 
+
+
+# Dicionário de cara e coroa.
+# 1 e 2 são iguais a cara e coroa, respetivamente. Isto não é uma boa explicação, mas é mais ou menos assim que funciona.
+ccDict = {
+    1: 'cara',
+    2: 'coroa'
+}
+
+
 # Se a ação escolhida tiver sido "mandar uma moeda ao ar"
 if acao == '2':
     print('''
@@ -62,16 +62,16 @@ o número correspondente)
 ''')
     ccInput = input()
     # Faz a escolha na linha de baixo
-    ccRandom = random.choice(['cara', 'coroa'])
+    ccRandom = random.randint(1, 2)
 
     # Se a face escolhida (de acordo com o dicionário ccDict) corresponder com a face obtida, ganhou. Caso contrário, perdeu.
-    if ccRandom == ccDict[ccInput]:
+    if ccRandom == int(ccInput):
         ganhouperdeuOutput = 'Ganhaste'
     else:
         ganhouperdeuOutput = 'Perdeste'
 
     print('''
 ===============================''')
-    print('Foi escolhida ' + ccDict[ccInput] + '.')
-    print(ganhouperdeuOutput + ', pois calhou ' + ccRandom + '.')
+    print('Foi escolhida ' + ccDict[int(ccInput)] + '.')
+    print(ganhouperdeuOutput + ', pois calhou ' + ccDict[ccRandom] + '.')
     print('===============================')
