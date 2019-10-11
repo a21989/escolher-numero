@@ -3,3 +3,4 @@ build/
 dist
 *.spec
 /.vscode
+logo/v2/
