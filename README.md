@@ -9,10 +9,9 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 ## [Downloads](https://github.com/a21989/escolher-numero/releases/)
 
-## To do
+## Issues
 
-- [ ] Reescrever o programa em JavaScript (talvez exista alguma maneira de o converter de Python ou até utilizar em Python mas eu quero fazer isto também para aprender)
-  - [ ] Desenvolver uma interface web para interagir com o programa.
+* [JavaScript](GH-1)
 
 ---
 
