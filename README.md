@@ -11,7 +11,7 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 ## Issues
 
-* #1 JavaScript
+* JavaScript [#1](https://github.com/a21989/escolher-numero/issues/1)
 
 ---
 
