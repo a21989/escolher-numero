@@ -11,7 +11,7 @@ Todas as aulas (exceto quando se esquece) o professor utiliza essa aplicação p
 
 ## Issues
 
-* [JavaScript](GH-1)
+* #1 JavaScript
 
 ---
 
