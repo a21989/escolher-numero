@@ -9,18 +9,18 @@ O professor utiliza essa aplicação para gerar dois números aleatórios que v�
 
 ## Transferir
 
-Ver página das [releases][releases].
+Ver versões disponíveis na [página das releases][releases].
 
 ## Lista de tarefas
 
-* Reescrever o programa em JavaScript (ver [#1][i1])
+* Reescrever o programa em JavaScript (ver [issue #1][i1])
 
 ## Licença
 
 Este projeto está licenciado sob a **The Unlicense**. [Mais informações](https://choosealicense.com/licenses/unlicense/)  
 This project is licensed under the **The Unlicense**. [More info](https://choosealicense.com/licenses/unlicense/)
 
-Ver [LICENSE](LICENSE)
+Ver [LICENSE](LICENSE)  
 See [LICENSE](LICENSE)
 
 
