@@ -14,12 +14,12 @@ Que ação pretende executar?
 =========================================================
 ''')
 
-açãoInicial = input()
+acaoInicial = input()
 
 
 
 # Se a ação escolhida tiver sido "escolher um número aleatório"
-if açãoInicial == '1':
+if acaoInicial == '1':
     print('\nQuantos números quer?')
     drawTimes = input()
     print('\nQual o número mínimo a obter?')
@@ -42,7 +42,7 @@ Número(s) obtidos:
 ccList = ['cara', 'coroa'] # cara = 0 (1-1); coroa = 1 (2-1) // Used in lines: 69, 70.
 
 # Se a ação escolhida tiver sido "mandar uma moeda ao ar"
-if açãoInicial == '2':
+if acaoInicial == '2':
     print('''
 ===================================
 Cara ou coroa?
