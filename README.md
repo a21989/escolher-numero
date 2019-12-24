@@ -1,15 +1,15 @@
-# escolher-numero
-
 ![logo-v1 \("42"\)](logo/v1/logo-v1-webp-100px.webp)
 
-Um programa de linha de comandos escrito em [python](https://www.python.org/).
+# escolher-numero
 
-Inspirado numa aplicação de smartphone utilizada pelo meu professor da disciplina *Biologia e Geologia* no 11º ano.  
+Um programa de **linha de comandos** \(interface de linha de comandos – ILC, mais conhecido pelo termo em inglês [*command-line interface*](https://en.wikipedia.org/wiki/Command-line_interface) – CLI\) escrito em [**Python**](https://www.python.org/) e [**Go**](https://golang.org/).
+
+O software foi inspirado numa aplicação de smartphone utilizada pelo meu professor da disciplina *Biologia e Geologia* no 11º ano.  
 O professor utiliza essa aplicação para gerar dois números aleatórios que vão determinar os alunos que irão responder a algumas (geralmente três) perguntas sobre a matéria.
 
-## Transferir
+Este programa permite gerar números aleatoriamente e atirar uma moeda ao ar, o que é a mesma coisa que números aleatórios mas com outros nomes e só dois números (cara ou coroa).
 
-Ver versões disponíveis na [página das releases][releases].
+A versão em Python foi desenvolvida primeiro e só depois veio a versão em Go. Aliás, a versão em Go ainda está a ser programada! Decidi tentar criar uma versão em Go, devido a esta linguagem ser compilada para código binário, o que permite uma **distribuição mais fácil do software**. Por outro lado, Python é uma linguagem interpretada por um "interpretador" no momento de execução. Também é possível obter ficheiros binários de programas escritos em Python mas a linguagem não foi feita para isso, devido a ser dinâmica, entre outros aspetos.
 
 ## Licença
 
