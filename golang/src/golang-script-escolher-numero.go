@@ -6,6 +6,24 @@ import (
 	"os"
 )
 
+var acaoInicial string
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+
+	start()
+
+	acaoInicial, _ = reader.ReadString('\n')
+
+	if acaoInicial == "1" {
+		num()
+	} else if acaoInicial == "2" {
+		cc()
+	} else {
+		start()
+	}
+}
+
 func start() {
 	fmt.Println(`
 
@@ -22,19 +40,3 @@ Que ação pretende executar?
 func num() {}
 
 func cc() {}
-
-func main() {
-	reader := bufio.NewReader(os.Stdin)
-
-	start()
-
-	var acaoInicial, _ = reader.ReadString('\n')
-
-	if acaoInicial == "1" {
-		fmt.Println(num)
-	} else if acaoInicial == "2" {
-		fmt.Println(cc)
-	} else {
-		fmt.Print(start)
-	}
-}
