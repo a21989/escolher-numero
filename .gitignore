@@ -5,3 +5,6 @@ dist/
 .vscode/
 .ropeproject/
 logo/v2
+*.code-workspace
+*.exe
+bin/
