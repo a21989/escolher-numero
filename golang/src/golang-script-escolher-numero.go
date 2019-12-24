@@ -9,19 +9,8 @@ import (
 var acaoInicial string
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
 
 	start()
-
-	acaoInicial, _ = reader.ReadString('\n')
-
-	if acaoInicial == "1" {
-		num()
-	} else if acaoInicial == "2" {
-		cc()
-	} else {
-		start()
-	}
 }
 
 func start() {
@@ -35,8 +24,23 @@ Que ação pretende executar?
 
 (Escolha uma opção introduzindo o número correspondente)
 =========================================================`)
+
+	reader := bufio.NewReader(os.Stdin)
+	acaoInicial, _ = reader.ReadString('\n')
+
+	if acaoInicial == "1" {
+		num()
+	} else if acaoInicial == "2" {
+		coin()
+	} else {
+		start()
+	}
 }
 
-func num() {}
+func num() {
+	fmt.Println("11111111111111")
+}
 
-func cc() {}
+func coin() {
+	fmt.Println("22222222222222")
+}
