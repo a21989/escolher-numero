@@ -5,7 +5,8 @@ import (
 )
 
 var unsupportedInput bool = false
-var inputWarning string = "\n\nINSIRA APENAS \"1\" OU \"2\"\nINSIRA \"q\" PARA FECHAR O PROGRAMA (quit)"
+
+const inputWarning string = "\n\nINSIRA APENAS \"1\" OU \"2\"\nINSIRA \"q\" PARA FECHAR O PROGRAMA (quit)"
 
 func start() {
 	fmt.Println(`
@@ -23,12 +24,12 @@ Que ação pretende executar?
 		fmt.Println(inputWarning)
 	}
 
-	var acaoInicial string
+	var initialInput string
 	fmt.Print("-> ")
-	fmt.Scanln(&acaoInicial)
+	fmt.Scanln(&initialInput)
 
-	if acaoInicial != "1" && acaoInicial != "2" {
-		if acaoInicial == "q" {
+	if initialInput != "1" && initialInput != "2" {
+		if initialInput == "q" {
 		} else {
 			unsupportedInput = true
 			start()
@@ -37,7 +38,7 @@ Que ação pretende executar?
 		unsupportedInput = false
 	}
 
-	switch acaoInicial {
+	switch initialInput {
 	case "1":
 		num()
 		break
