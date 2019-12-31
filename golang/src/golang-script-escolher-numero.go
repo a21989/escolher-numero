@@ -50,7 +50,18 @@ Que ação pretende executar?
 } // end of start function
 
 func num() {
-	fmt.Println("11111111111111")
+	fmt.Print("\n\n\n")
+	var (
+		drawTimes int
+		minNum    int
+		maxNum    int
+	)
+	fmt.Print("Quantos números quer?\n-> ")
+	fmt.Scanln(&drawTimes)
+	fmt.Print("Qual o número mínimo a obter?\n-> ")
+	fmt.Scanln(&minNum)
+	fmt.Print("Qual o número máximo a obter?\n-> ")
+	fmt.Scanln(&maxNum)
 }
 
 func coin() {
