@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"strconv"
+	"time"
 )
 
 var unsupportedInput bool = false
@@ -55,6 +58,7 @@ func num() {
 		drawTimes int
 		minNum    int
 		maxNum    int
+		n         string
 	)
 	fmt.Print("Quantos números quer?\n-> ")
 	fmt.Scanln(&drawTimes)
@@ -62,7 +66,26 @@ func num() {
 	fmt.Scanln(&minNum)
 	fmt.Print("Qual o número máximo a obter?\n-> ")
 	fmt.Scanln(&maxNum)
-}
+
+	if drawTimes > 1 {
+		n = "Números obtidos (" + strconv.Itoa(drawTimes) + ")"
+	} else {
+		n = "Número obtido"
+	}
+
+	fmt.Print(`
+======================
+` + n + `:
+`)
+
+	rand.Seed(time.Now().UnixNano())
+
+	for i := 1; i <= drawTimes; i++ {
+		fmt.Println(rand.Intn(maxNum-minNum+1) + minNum)
+	}
+
+	fmt.Print("======================")
+} // end of num function
 
 func coin() {
 	fmt.Println("22222222222222")
@@ -70,4 +93,4 @@ func coin() {
 
 func main() {
 	start()
-}
+} // end of coin function
