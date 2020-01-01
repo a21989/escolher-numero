@@ -1,3 +1,5 @@
+[[ENG](README.eng.md)]
+
 ![logo-v1 \("42"\)](logo/v1/logo-v1-webp-100px.webp)
 
 # escolher-numero
@@ -14,7 +16,7 @@ Este programa permite **gerar números aleatoriamente** e **atirar uma moeda ao 
 
 ## História do desenvolvimento
 
-A versão em Python foi desenvolvida primeiro e só depois veio a versão em Go. Aliás, **a versão em Go ainda está a ser programada!** Decidi tentar criar uma versão em Go, devido a esta linguagem ser compilada para código binário, o que permite uma **distribuição mais fácil do software**. Por outro lado, Python é uma linguagem interpretada por um "interpretador" no momento de execução. Também é possível obter ficheiros binários de programas escritos em Python mas a linguagem não foi feita para isso, devido a ser dinâmica, entre outros aspetos, sendo necessária a compilação por software não oficial, enquanto que no caso de Go existe o compilador oficial.
+A versão em Python foi desenvolvida primeiro e só depois veio a versão em Go. Decidi tentar criar uma versão em Go, devido a esta linguagem ser compilada para código binário, o que permite uma **distribuição mais fácil do software**. Por outro lado, Python é uma linguagem interpretada por um "interpretador" no momento de execução. Também é possível obter ficheiros binários de programas escritos em Python mas a linguagem não foi feita para isso, devido a ser dinâmica, entre outros aspetos, sendo necessária a compilação por software não oficial, enquanto que no caso de Go existe o compilador oficial.
 
 ## Licença
 
