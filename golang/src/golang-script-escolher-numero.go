@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"math/rand"
-	"strconv"
-	"time"
+	"fmt"       // https://golang.org/pkg/fmt/
+	"keyboard"  // https://github.com/eiannone/keyboard
+	"math/rand" // https://golang.org/pkg/math/rand/
+	"strconv"   // https://golang.org/pkg/strconv/
+	"time"      // https://golang.org/pkg/time/
 )
 
 var unsupportedInput bool = false
@@ -130,13 +131,14 @@ o número correspondente)
 ===============================
 Foi escolhida ` + coinArray[coinInput-1] + `.
 ` + winlossOutput + `, pois calhou ` + coinArray[coinRandom-1] + `.
-===============================
-
-`)
+===============================`)
 
 } // end of coin function
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	start()
+
+	fmt.Println("\n\n\nPREMIR QUALQUER TECLA PARA SAIR")
+	keyboard.GetSingleKey()
 } // end of main function
