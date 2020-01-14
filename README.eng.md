@@ -1,6 +1,6 @@
 [[POR](README.md)]
 
-![logo-v1 \("42"\)](logo/v1/logo-v1-webp-100px.webp)
+![logo-v1 \("42"\)](logo/v1/logo-v1-svg-path-compressed.svg)
 
 # escolher-numero
 
