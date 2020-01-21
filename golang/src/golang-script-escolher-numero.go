@@ -29,12 +29,14 @@ Que ação pretende executar?
 		fmt.Println(inputWarning1)
 	}
 
-	var initialInput string
-	fmt.Print("-> ")
-	fmt.Scanln(&initialInput)
+	initialInput, _, err := keyboard.GetSingleKey()
 
-	if initialInput != "1" && initialInput != "2" {
-		if initialInput == "q" {
+	if err != nil {
+		panic(err)
+	}
+
+	if initialInput != '1' && initialInput != '2' {
+		if initialInput == 'q' {
 		} else {
 			unsupportedInput = true
 			start()
@@ -44,10 +46,10 @@ Que ação pretende executar?
 	}
 
 	switch initialInput {
-	case "1":
+	case '1':
 		num()
 		break
-	case "2":
+	case '2':
 		coin()
 		break
 	}
@@ -112,15 +114,19 @@ Cara ou coroa?
 o número correspondente)
 ===================================`)
 
-	var coinInput int
-	fmt.Print("-> ")
-	fmt.Scanln(&coinInput)
+	coinInput, _, err := keyboard.GetSingleKey()
+
+	if err != nil {
+		panic(err)
+	}
+
+	var coinInputInt int = int(coinInput - '0')
 
 	var coinRandom int = rand.Intn(2) + 1
 
 	var winlossOutput string
 
-	if coinRandom == coinInput {
+	if coinRandom == coinInputInt {
 		winlossOutput = "Ganhaste"
 	} else {
 		winlossOutput = "Perdeste"
@@ -129,7 +135,7 @@ o número correspondente)
 	fmt.Print(`
 
 ===============================
-Foi escolhida ` + coinArray[coinInput-1] + `.
+Foi escolhida ` + coinArray[coinInputInt-1] + `.
 ` + winlossOutput + `, pois calhou ` + coinArray[coinRandom-1] + `.
 ===============================`)
 
