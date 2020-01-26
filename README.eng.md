@@ -4,6 +4,8 @@
 
 # escolher-numero
 
+[![CodeFactor](https://www.codefactor.io/repository/github/a21989/escolher-numero/badge/master)](https://www.codefactor.io/repository/github/a21989/escolher-numero/overview/master) [![GitHub license](https://img.shields.io/github/license/a21989/escolher-numero)](https://github.com/a21989/escolher-numero/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/a21989/escolher-numero)](https://github.com/a21989/escolher-numero/issues)
+
 "escolher-numero" (escolher número), "choose number" in portuguese, is a **command-line program** \([*command-line interface*](https://en.wikipedia.org/wiki/Command-line_interface) – CLI\) written in [**Python**](https://www.python.org/) and [**Go**](https://golang.org/).
 
 ## Origin
