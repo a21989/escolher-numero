@@ -4,6 +4,8 @@
 
 # escolher-numero
 
+[![CodeFactor](https://www.codefactor.io/repository/github/a21989/escolher-numero/badge/master)](https://www.codefactor.io/repository/github/a21989/escolher-numero/overview/master) [![GitHub license](https://img.shields.io/github/license/a21989/escolher-numero)](https://github.com/a21989/escolher-numero/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/a21989/escolher-numero)](https://github.com/a21989/escolher-numero/issues)
+
 Um programa de **linha de comandos** \(interface de linha de comandos – ILC, mais conhecido pelo termo em inglês [*command-line interface*](https://en.wikipedia.org/wiki/Command-line_interface) – CLI\) escrito em [**Python**](https://www.python.org/) e [**Go**](https://golang.org/).
 
 ## Origem
