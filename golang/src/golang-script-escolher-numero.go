@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"       // https://golang.org/pkg/fmt/
-	"keyboard"  // https://github.com/eiannone/keyboard
 	"math/rand" // https://golang.org/pkg/math/rand/
 	"strconv"   // https://golang.org/pkg/strconv/
 	"time"      // https://golang.org/pkg/time/
+
+	"github.com/eiannone/keyboard"
 )
 
 var unsupportedInput bool = false
@@ -71,7 +72,7 @@ func num() {
 	fmt.Scanln(&minNum)
 	fmt.Print("Qual o número máximo a obter?\n-> ")
 	fmt.Scanln(&maxNum)
-	println("===================================\n\n")
+	fmt.Println("===================================\n\n")
 
 	if drawTimes > 1 {
 		n = "Números obtidos (" + strconv.Itoa(drawTimes) + ")"
@@ -80,12 +81,11 @@ func num() {
 	}
 
 	if minNum > maxNum {
-		print(inputWarning2)
+		fmt.Print(inputWarning2)
 		num()
 	} else {
-		fmt.Print(`======================
-` + n + `:
-`)
+		fmt.Println(`======================
+` + n + `:`)
 
 		for i := 1; i <= drawTimes; i++ {
 			fmt.Println(rand.Intn(maxNum-minNum+1) + minNum)
