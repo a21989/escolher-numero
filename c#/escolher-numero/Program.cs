@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace escolher_numero
 {
@@ -102,9 +103,27 @@ Que ação pretende executar?
 			}
 
 			Random rand = new Random();
+			bool repeats = true;
+			var rands = new List<int> {};
+
 			for (int i = 1; i <= drawTimes; i++)
 			{
-				Console.WriteLine(rand.Next(minNum, maxNum+1));
+				while (repeats)
+				{
+				int x = rand.Next(minNum, maxNum+1);
+
+				if (!(rands.Contains(x)))
+					{
+						rands.Add(x);
+						repeats = false;
+					}
+				}
+			}
+			foreach (var item in rands)
+			{
+				{
+				Console.WriteLine(item);
+				}
 			}
 
 			Console.WriteLine("===================================");
