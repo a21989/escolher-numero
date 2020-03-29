@@ -21,7 +21,26 @@ Que ação pretende executar?
 		static void Main()
         {
             start();
+
+			Console.WriteLine("\n\n\nPREMIR QUALQUER TECLA PARA SAIR");
+			Console.ReadKey();
         }
+
+		static void oneortwoorq(string q)
+		{
+			if (q != "1" && q != "2")
+			{
+				if (q == "q") {}
+				else
+				{
+				unsupportedInput = true;
+				start();
+				}
+				
+			} else {
+				unsupportedInput = false;
+			}
+		}
 
 		static void start()
 		{
@@ -32,26 +51,18 @@ Que ação pretende executar?
 			
 			string initialInput = Console.ReadKey().KeyChar.ToString();
 
-			if (initialInput != "1" || initialInput != "2")
-			{
-				if (initialInput == "q") {}
-				else
-				{
-				unsupportedInput = true;
-				start();
-				}
-				
-			} else {
-				unsupportedInput = false;
-			}
+			oneortwoorq(initialInput);
 
 			switch (initialInput)
 			{
 				case "1":
-					Console.Title = "Números!!!!!!!!";
+					Console.Title = "Escolher número(s)";
+					Console.Clear();
 					num();
 					break;
 				case "2":
+					Console.Title = "Mandar uma moeda ao ar";
+					Console.Clear();
 					coin();
 					break;
 				//default:
@@ -78,9 +89,7 @@ Que ação pretende executar?
 			{
 				s = "s";
 				nn = $" ({drawTimes.ToString()})";
-			} else {
-				s = null; nn = null;
-			}
+			} else { s = null; nn = null; }
 
 			if (minNum > maxNum)
 			{
@@ -89,7 +98,7 @@ Que ação pretende executar?
 			}
 			else
 			{
-				Console.WriteLine($"======================\nNúmero{s} obtido{s}{nn}:");
+				Console.WriteLine($"===================================\nNúmero{s} obtido{s}{nn}:");
 			}
 
 			Random rand = new Random();
@@ -98,11 +107,45 @@ Que ação pretende executar?
 				Console.WriteLine(rand.Next(minNum, maxNum+1));
 			}
 
+			Console.WriteLine("===================================");
+
 		} // end of num()
 
 		static void coin()
 		{
+			string[] coinArray = { "cara", "coroa" };
 
+			Console.WriteLine(@"===================================
+Cara ou coroa?
+
+1: cara
+2: coroa
+
+(Escolha uma opção introduzindo
+o número correspondente)
+===================================");
+
+			string coinInput = Console.ReadKey().KeyChar.ToString();
+
+			oneortwoorq(coinInput);
+			int coinInputInt = int.Parse(coinInput);
+
+			Random rand = new Random();
+			int coinRandom = rand.Next(0,2);
+
+			string winlossOutput;
+			if (coinRandom == coinInputInt) {
+				winlossOutput = "Ganhaste";
+			} else {
+				winlossOutput = "Perdeste";
+			}
+
+				Console.Write($@"
+
+===================================
+Foi escolhida {coinArray[coinInputInt-1]}.
+{winlossOutput} pois calhou {coinArray[coinRandom-1]}.
+===================================");
 		}
     }
 }
