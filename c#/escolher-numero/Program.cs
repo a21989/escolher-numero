@@ -103,16 +103,17 @@ Que ação pretende executar?
 			}
 
 			Random rand = new Random();
-			bool repeats = true;
+			bool repeats;
 			var rands = new List<int> {};
 
 			for (int i = 1; i <= drawTimes; i++)
 			{
+				repeats = true;
 				while (repeats)
 				{
 				int x = rand.Next(minNum, maxNum+1);
 
-				if (!(rands.Contains(x)))
+				if (!(rands.Contains(x))) // check if it already exists, and if it doesn't, add it
 					{
 						rands.Add(x);
 						repeats = false;
