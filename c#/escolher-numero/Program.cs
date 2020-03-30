@@ -18,12 +18,15 @@ Que ação pretende executar?
 
 (Escolha uma opção introduzindo o número correspondente)
 =========================================================";
+		
+		const string programName = "escolher-numero";
 
 		static void Main()
         {
+			Console.Title = programName;
             start();
 
-			Console.WriteLine("\n\n\nPREMIR QUALQUER TECLA PARA SAIR");
+			Console.Write("\n\n\nPREMIR QUALQUER TECLA PARA SAIR");
 			Console.ReadKey();
         }
 
@@ -57,12 +60,12 @@ Que ação pretende executar?
 			switch (initialInput)
 			{
 				case "1":
-					Console.Title = "Escolher número(s)";
+					Console.Title = "Escolher número(s) — " + programName;
 					Console.Clear();
 					num();
 					break;
 				case "2":
-					Console.Title = "Mandar uma moeda ao ar";
+					Console.Title = "Mandar uma moeda ao ar — " + programName;
 					Console.Clear();
 					coin();
 					break;
@@ -83,7 +86,8 @@ Que ação pretende executar?
 			Console.Write("Qual o número máximo a obter?\n-> ");
 			int maxNum = int.Parse(Console.ReadLine());
 			
-			Console.WriteLine("===================================\n\n");
+			Console.WriteLine("===================================\n");
+			Console.Clear();
 
 			string s, nn;
 			if (drawTimes > 1)
@@ -92,40 +96,52 @@ Que ação pretende executar?
 				nn = $" ({drawTimes.ToString()})";
 			} else { s = null; nn = null; }
 
+			string nnn = $"===================================\nNúmero{s} obtido{s}{nn} (de {minNum} a {maxNum}):";
+
 			if (minNum > maxNum)
 			{
 				Console.WriteLine(inputWarning2);
 				num();
 			}
-			else
-			{
-				Console.WriteLine($"===================================\nNúmero{s} obtido{s}{nn}:");
-			}
 
 			Random rand = new Random();
-			bool repeats;
-			var rands = new List<int> {};
 
-			for (int i = 1; i <= drawTimes; i++)
+			if (drawTimes <= maxNum)
 			{
-				repeats = true;
-				while (repeats)
-				{
-				int x = rand.Next(minNum, maxNum+1);
+				bool repeats;
+				var rands = new List<int> {};
 
-				if (!(rands.Contains(x))) // check if it already exists, and if it doesn't, add it
+				Console.WriteLine("\nA calcular números (de modo a que não se repitam)...\n\n");
+
+				for (int i = 1; i <= drawTimes; i++)
+				{
+					repeats = true;
+					while (repeats)
 					{
-						rands.Add(x);
-						repeats = false;
+					int x = rand.Next(minNum, maxNum+1);
+
+					if (!(rands.Contains(x))) // check if it already exists, and if it doesn't, add it
+						{
+							rands.Add(x);
+							repeats = false;
+						}
 					}
 				}
+
+				Console.WriteLine(nnn);
+
+				foreach (var item in rands)
+					Console.WriteLine(item);
 			}
-			foreach (var item in rands)
+			else
 			{
-				{
-				Console.WriteLine(item);
-				}
+				Console.WriteLine("\n\n" + nnn);
+				for (int i = 1; i <= drawTimes; i++)
+					Console.WriteLine(rand.Next(minNum, maxNum+1));
 			}
+
+
+
 
 			Console.WriteLine("===================================");
 
