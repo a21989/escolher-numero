@@ -140,9 +140,6 @@ Que ação pretende executar?
 					Console.WriteLine(rand.Next(minNum, maxNum+1));
 			}
 
-
-
-
 			Console.WriteLine("===================================");
 
 		} // end of num()
