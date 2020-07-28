@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace escolher_numero
 {
-    class Program
-    {
+	class Program
+	{
 		static private bool unsupportedInput = false;
 		private const string inputWarning1 = "\n\n[aviso] INSIRA APENAS \"1\" OU \"2\"\n[dica]  INSIRA \"q\" PARA FECHAR O PROGRAMA (quit)";
 		private const string inputWarning2 = "[aviso] O NÚMERO MÍNIMO NÃO PODE SER MAIOR QUE O NÚMERO MÁXIMO";
@@ -22,13 +22,13 @@ Que ação pretende executar?
 		const string programName = "escolher-numero";
 
 		static void Main()
-        {
+		{
 			Console.Title = programName;
-            start();
+			start();
 
 			Console.Write("\n\n\nPREMIR QUALQUER TECLA PARA SAIR");
 			Console.ReadKey();
-        }
+		}
 
 		static void oneortwoorq(string q)
 		{
@@ -180,5 +180,5 @@ Foi escolhida {coinArray[coinInputInt-1]}.
 {winlossOutput} pois calhou {coinArray[coinRandom-1]}.
 ===================================");
 		}
-    }
+	}
 }
