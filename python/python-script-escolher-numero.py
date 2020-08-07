@@ -80,8 +80,11 @@ o número correspondente)
 # end of coin() function
 
 
+def main():
+	if acaoInicial == "1":
+		num()
+	elif acaoInicial == "2":
+		coin()
 
-if acaoInicial == "1":
-	num()
-elif acaoInicial == "2":
-	coin()
+if __name__ == "__main__":
+	main()
