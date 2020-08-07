@@ -17,38 +17,38 @@ Que ação pretende executar?
 acaoInicial = input("-> ")
 
 def num():
-    print("\n\n\n")
-    print("===================================")
-    print("Quantos números quer?")
-    drawTimes = input("-> ")
-    print("Qual o número mínimo a obter?")
-    minNum = input("-> ")
-    print("Qual o número máximo a obter?")
-    maxNum = input("-> ")
-    print("===================================\n\n")
+	print("\n\n\n")
+	print("===================================")
+	print("Quantos números quer?")
+	drawTimes = input("-> ")
+	print("Qual o número mínimo a obter?")
+	minNum = input("-> ")
+	print("Qual o número máximo a obter?")
+	maxNum = input("-> ")
+	print("===================================\n\n")
 
-    if int(minNum) > int(maxNum):
-        print("\n[aviso] O NÚMERO MÍNIMO NÃO PODE SER MAIOR QUE O NÚMERO MÁXIMO\n")
-        num()
-    else:
-        if int(drawTimes) > 1:
-            n = "Números obtidos (" + str(drawTimes) + ")"
-        else:
-            n = "Número obtido"
+	if int(minNum) > int(maxNum):
+		print("\n[aviso] O NÚMERO MÍNIMO NÃO PODE SER MAIOR QUE O NÚMERO MÁXIMO\n")
+		num()
+	else:
+		if int(drawTimes) > 1:
+			n = "Números obtidos (" + str(drawTimes) + ")"
+		else:
+			n = "Número obtido"
 
-        print("""
+		print("""
 ======================
 """ + n + """:
 """)
-        # Executa o número de vezes que se pediu de acordo com drawTimes
-        for i in range(0, int(drawTimes)):
-            print(random.randint(int(minNum), int(maxNum)))
-        print("======================")
+		# Executa o número de vezes que se pediu de acordo com drawTimes
+		for _ in range(0, int(drawTimes)):
+			print(random.randint(int(minNum), int(maxNum)))
+		print("======================")
 # end of num() function
 
 
 def coin():
-    print("""
+	print("""
 ===================================
 Cara ou coroa?
 
@@ -59,29 +59,29 @@ Cara ou coroa?
 o número correspondente)
 ===================================""")
 
-    ccInput = input("-> ")
+	ccInput = input("-> ")
 
-    # Faz a escolha na linha em baixo
-    ccRandom = random.randint(1, 2)
+	# Faz a escolha na linha em baixo
+	ccRandom = random.randint(1, 2)
 
-    # Se a face escolhida corresponder com a face obtida, ganhou. Caso contrário, perdeu.
-    if ccRandom == int(ccInput):
-        ganhouPerdeuOutput = "Ganhaste"
-    else:
-        ganhouPerdeuOutput = "Perdeste"
+	# Se a face escolhida corresponder com a face obtida, ganhou. Caso contrário, perdeu.
+	if ccRandom == int(ccInput):
+		ganhouPerdeuOutput = "Ganhaste"
+	else:
+		ganhouPerdeuOutput = "Perdeste"
 
-    ccList = ["cara", "coroa"]
+	ccList = ["cara", "coroa"]
 
-    print("""
+	print("""
 ===============================""")
-    print("Foi escolhida " + ccList[int(ccInput)-1] + ".")
-    print(ganhouPerdeuOutput + ", pois calhou " + ccList[ccRandom-1] + ".")
-    print("===============================")
+	print("Foi escolhida " + ccList[int(ccInput)-1] + ".")
+	print(ganhouPerdeuOutput + ", pois calhou " + ccList[ccRandom-1] + ".")
+	print("===============================")
 # end of coin() function
 
 
 
 if acaoInicial == "1":
-    num()
+	num()
 elif acaoInicial == "2":
-    coin()
+	coin()
