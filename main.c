@@ -52,36 +52,46 @@ int choose_number(int exit_code) {
     printf("Quantidade de números a obter: ");
 
     int ret;
+    char c = ' ';
 
     int64_t n;
 
-    ret = scanf("%ld", &n);
+    ret = scanf("%ld%c", &n, &c);
+
+    if (ret == 0 || (ret == 2 && c != '\n')) {
+        exit_code += 1;
+    }
 
     if (ret < 1) {
         scanf("%*[^\n]");
-        exit_code += 1;
     }
 
     printf("Valor mínimo inclusivo: ");
 
     int64_t min;
 
-    ret = scanf("%ld", &min);
+    ret = scanf("%ld%c", &min, &c);
+
+    if (ret < 1 || (ret == 2 && c != '\n')) {
+        exit_code += 1;
+    }
 
     if (ret < 1) {
         scanf("%*[^\n]");
-        exit_code += 1;
     }
 
     printf("Valor máximo inclusivo: ");
 
     int64_t max;
 
-    ret = scanf("%ld", &max);
+    ret = scanf("%ld%c", &max, &c);
+
+    if (ret == 0 || (ret == 2 && c != '\n')) {
+        exit_code += 1;
+    }
 
     if (ret < 1) {
         scanf("%*[^\n]");
-        exit_code += 1;
     }
 
     if (exit_code > 0)
