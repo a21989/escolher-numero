@@ -123,12 +123,14 @@ int coin_toss(void) {
 int user_select_start(int previous_exit_code) {
     clear_screen_and_move_cursor_to_start();
 
-    printf("Que ação pretende executar?\n\n1: Escolher número(s)\n2: Mandar uma moeda ao ar (\"cara ou coroa\")\n\n");
+    printf("[1] Escolher número(s)\n[2] Mandar uma moeda ao ar (\"cara ou coroa\")\n[q] Sair\n\n");
 
     if (previous_exit_code == 4)
-        printf("Invalid code.\n\n");
+        printf("Seleção inválida. Insira apenas uma das opções disponíveis.\n\n");
 
     char c;
+
+    printf("Ação a executar: ");
 
     scanf(" %c", &c);
 
