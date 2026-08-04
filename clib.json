@@ -1,0 +1,7 @@
+{
+  "name": "escolher-numero",
+  "version": "0.0.0",
+  "dependencies": {
+    "goodcleanfun/random": "0.4.1"
+  }
+}
