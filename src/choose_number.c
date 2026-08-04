@@ -1,3 +1,5 @@
+#include <inttypes.h>
+
 int choose_number(int exit_code) {
     clear_screen_and_move_cursor_to_start();
 

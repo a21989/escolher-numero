@@ -1,3 +1,5 @@
+#include <inttypes.h>
+
 int coin_toss(void) {
     clear_screen_and_move_cursor_to_start();
 

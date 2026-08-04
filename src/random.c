@@ -1,3 +1,6 @@
+#include "random/rand_seed.h"
+#include "random/rand_u64.h"
+
 rand_u64_gen_t seed;
 
 void seed_rng() {
