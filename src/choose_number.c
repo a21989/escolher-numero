@@ -1,9 +1,12 @@
+#include "escape_codes.h"
+#include "random.h"
 #include <inttypes.h>
+#include <stdio.h>
 
-int choose_number(int exit_code) {
+int choose_number(seed_t *seed, int exit_code) {
     clear_screen_and_move_cursor_to_start();
 
-    seed_rng();
+    seed_rng(seed);
 
     if (exit_code > 0)
         printf("Valores inseridos inválidos.\n\n");
@@ -65,7 +68,7 @@ int choose_number(int exit_code) {
     leave_alternate_screen();
 
     for (int64_t i = 0; i < n; i++) {
-        printf("%ld\n", get_random_number(min, max));
+        printf("%ld\n", get_random_number(min, max, seed));
     }
 
     return exit_code;

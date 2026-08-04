@@ -8,17 +8,19 @@ output_name="${PROGRAM_NAME}-${os}-${arch}"
 
 COMMON_FLAGS="-std=c23 -Isrc -Ideps"
 
+FILES="src/*.c"
+
 
 debug() {
-    gcc -Wall -g -O0 $COMMON_FLAGS ./src/main.c -o "$output_name"
+    gcc -Wall -g -O0 $COMMON_FLAGS $FILES -o "$output_name"
 }
 
 release() {
-    gcc -Wall -s -O2 $COMMON_FLAGS ./src/main.c -o "$output_name"
+    gcc -Wall -s -O2 $COMMON_FLAGS $FILES -o "$output_name"
 }
 
 release_static() {
-    gcc -Wall -s -O2 -static $COMMON_FLAGS ./src/main.c -o "$output_name"
+    gcc -Wall -s -O2 -static $COMMON_FLAGS $FILES -o "$output_name"
 }
 
 for i in "$@"; do

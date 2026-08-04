@@ -1,3 +1,6 @@
+#include "escape_codes.h"
+#include <stdio.h>
+
 int user_select_start(int previous_exit_code) {
     clear_screen_and_move_cursor_to_start();
 
