@@ -125,16 +125,19 @@ int user_select_start(int previous_exit_code) {
 
     printf("[1] Escolher número(s)\n[2] Mandar uma moeda ao ar (\"cara ou coroa\")\n[q] Sair\n\n");
 
-    if (previous_exit_code == 4)
+    if (previous_exit_code == -2)
         printf("Seleção inválida. Insira apenas uma das opções disponíveis.\n\n");
 
-    char c;
+    char c1;
+    char c2 = ' ';
 
     printf("Ação a executar: ");
 
-    scanf(" %c", &c);
+    if (scanf(" %c%c", &c1, &c2) == 2 && c2 != '\n') {
+        scanf("%*[^\n]");
+    }
 
-    switch (c) {
+    switch (c1) {
     case '1':
         return 1;
         break;
@@ -142,10 +145,10 @@ int user_select_start(int previous_exit_code) {
         return 2;
         break;
     case 'q':
-        return 3;
+        return 'q';
         break;
     default:
-        return 4;
+        return -2;
         break;
     }
 }
@@ -157,7 +160,7 @@ int main(void) {
 
     ret = -1;
 
-    while (ret < 0 || ret == 4) {
+    while (ret < 0) {
         ret = user_select_start(ret);
     }
 
