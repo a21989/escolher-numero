@@ -94,6 +94,10 @@ int choose_number(int exit_code) {
         scanf("%*[^\n]");
     }
 
+    if (min > max) {
+        exit_code += 1;
+    }
+
     if (exit_code > 0)
         return exit_code;
 
