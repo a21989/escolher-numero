@@ -139,6 +139,7 @@ int user_select_start(int previous_exit_code) {
 
     if (scanf(" %c%c", &c1, &c2) == 2 && c2 != '\n') {
         scanf("%*[^\n]");
+        c1 = 'e';
     }
 
     switch (c1) {
