@@ -3,6 +3,7 @@
 #include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 rand_u64_gen_t seed;
 
@@ -10,81 +11,176 @@ void seed_rng() {
     rand_state_init(time(NULL), seed.state, 16);
 }
 
-int64_t get_random_number(int64_t min, int64_t max) {
-    return rand_u64(&seed) % (max + 1 - min) + min;
+int64_t *get_random_numbers(int64_t n, int64_t min, int64_t max) {
+    int64_t *num_array = (int64_t *)malloc(sizeof(int64_t) * n);
+
+    for (int64_t i = 0; i < n; i++) {
+        num_array[i] = rand_u64(&seed) % (max + 1 - min) + min;
+    }
+
+    return num_array;
 }
+
+// https://en.wikipedia.org/wiki/ANSI_escape_code
 
 void clear_screen_and_move_cursor_to_start() {
     printf("\033[2J\033[H");
 }
 
-// https://en.wikipedia.org/wiki/ANSI_escape_code
 void enter_alternate_screen() {
-    printf("\033[?1049h"); // Enter alternate screen
+    printf("\033[?1049h");
 }
 
 void leave_alternate_screen() {
-    printf("\033[?1049l"); // Leave alternate screen
+    printf("\033[?1049l");
 }
 
-void choose_number(void) {
+int choose_number(char **result_to_print, int previous_exit_code) {
+    clear_screen_and_move_cursor_to_start();
+
+    int exit_code = 0;
+
     seed_rng();
+
+    if (previous_exit_code > 0)
+        printf("Valores inseridos inválidos.\n\n");
+
+    printf("Quantidade de números a obter: ");
+
+    int ret;
+
+    int64_t n;
+
+    ret = scanf("%ld", &n);
+
+    if (ret < 1) {
+        exit_code += 1;
+    }
+
+    printf("Valor mínimo inclusivo: ");
+
+    int64_t min;
+
+    ret = scanf("%ld", &min);
+
+    if (ret < 1) {
+        exit_code += 1;
+    }
+
+    printf("Valor máximo inclusivo: ");
+
+    int64_t max;
+
+    ret = scanf("%ld", &max);
+
+    if (ret < 1) {
+        exit_code += 1;
+    }
+
+    if (exit_code > 0)
+        return exit_code;
+
+    int64_t *numbers = get_random_numbers(n, min, max);
+
+    char *numbers_string = (char *)malloc(21 * sizeof(char) * n); // at most, each number will occupy a string of 21 characters
+
+    int_fast16_t string_offset = 0;
+
+    for (int64_t i = 0; i < n; i++) {
+        // string_offset = strlen(*result_to_print);
+
+        string_offset += sprintf(&numbers_string[string_offset], "%ld\n", numbers[i]);
+    }
+
+    *result_to_print = numbers_string;
+
+    return exit_code;
 }
 
-void coin_toss(void) {
+int coin_toss(char **result_to_print) {
+    clear_screen_and_move_cursor_to_start();
+
     seed_rng();
+
+    int n = 1;
+    int min = 0;
+    int max = 1;
+
+    int64_t *num_array = get_random_numbers(n, min, max);
+
+    bool cara = (bool)num_array[n - 1];
+
+    free(num_array);
+
+    *result_to_print = cara ? "○ cara" : "● coroa";
+
+    return 0;
 }
 
-int main(void) {
-    bool invalid_command_already_triggered = false;
-
-    enter_alternate_screen();
+int user_select_start(int previous_exit_code) {
+    clear_screen_and_move_cursor_to_start();
 
     printf("Que ação pretende executar?\n\n1: Escolher número(s)\n2: Mandar uma moeda ao ar (\"cara ou coroa\")\n\n");
 
-    char c;
+    if (previous_exit_code == 4)
+        printf("Invalid code.\n\n");
 
-before_scanf:
+    char c;
 
     scanf(" %c", &c);
 
     switch (c) {
-    case 'q':
-        goto leave;
-        break;
     case '1':
-        choose_number();
+        return 1;
         break;
     case '2':
-        coin_toss();
+        return 2;
+        break;
+    case 'q':
+        return 3;
         break;
     default:
-        if (!invalid_command_already_triggered) {
-            printf("\33[1A");
-            printf("\33[2K\r");
-            printf("Invalid command.\n\n");
-        } else {
-            clear_screen_and_move_cursor_to_start();
+        return 4;
+        break;
+    }
+}
+
+int main(void) {
+    enter_alternate_screen();
+
+    int user_select_start_return_code;
+
+    user_select_start_return_code = -1;
+
+    while (user_select_start_return_code < 0 || user_select_start_return_code == 4) {
+        user_select_start_return_code = user_select_start(user_select_start_return_code);
+    }
+
+    char *result_to_print;
+
+    switch (user_select_start_return_code) {
+    case 1:
+        int choose_number_return_code = -1;
+
+        while (choose_number_return_code != 0) {
+            choose_number_return_code = choose_number(&result_to_print, choose_number_return_code);
         }
-        invalid_command_already_triggered = true;
-        goto before_scanf;
+
+        break;
+    case 2:
+        coin_toss(&result_to_print);
+
+        break;
+    default:
         break;
     }
 
-leave:
     leave_alternate_screen();
 
-    printf("You entered: %c\n", c);
+    puts(result_to_print);
 
-    //
-
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
-    printf("%lu\n", get_random_number(1, 30));
+    if (user_select_start_return_code == 1)
+        free(result_to_print);
 
     return 0;
 }
