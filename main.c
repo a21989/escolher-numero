@@ -39,15 +39,15 @@ void leave_alternate_screen() {
     printf("\033[?1049l");
 }
 
-int choose_number(int previous_exit_code) {
+int choose_number(int exit_code) {
     clear_screen_and_move_cursor_to_start();
-
-    int exit_code = 0;
 
     seed_rng();
 
-    if (previous_exit_code > 0)
+    if (exit_code > 0)
         printf("Valores inseridos inválidos.\n\n");
+
+    exit_code = 0;
 
     printf("Quantidade de números a obter: ");
 
@@ -57,9 +57,8 @@ int choose_number(int previous_exit_code) {
 
     ret = scanf("%ld", &n);
 
-    if (ret < 1) {
+    if (ret < 1)
         exit_code += 1;
-    }
 
     printf("Valor mínimo inclusivo: ");
 
@@ -67,9 +66,8 @@ int choose_number(int previous_exit_code) {
 
     ret = scanf("%ld", &min);
 
-    if (ret < 1) {
+    if (ret < 1)
         exit_code += 1;
-    }
 
     printf("Valor máximo inclusivo: ");
 
@@ -77,12 +75,13 @@ int choose_number(int previous_exit_code) {
 
     ret = scanf("%ld", &max);
 
-    if (ret < 1) {
+    if (ret < 1)
         exit_code += 1;
-    }
 
     if (exit_code > 0)
         return exit_code;
+
+    leave_alternate_screen();
 
     for (int64_t i = 0; i < n; i++) {
         printf("%ld\n", get_random_number(min, max));
@@ -157,6 +156,7 @@ int main(void) {
         ret = coin_toss();
         break;
     default:
+        leave_alternate_screen();
         break;
     }
 
