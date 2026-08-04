@@ -57,8 +57,10 @@ int choose_number(int exit_code) {
 
     ret = scanf("%ld", &n);
 
-    if (ret < 1)
+    if (ret < 1) {
+        scanf("%*[^\n]");
         exit_code += 1;
+    }
 
     printf("Valor mínimo inclusivo: ");
 
@@ -66,8 +68,10 @@ int choose_number(int exit_code) {
 
     ret = scanf("%ld", &min);
 
-    if (ret < 1)
+    if (ret < 1) {
+        scanf("%*[^\n]");
         exit_code += 1;
+    }
 
     printf("Valor máximo inclusivo: ");
 
@@ -75,8 +79,10 @@ int choose_number(int exit_code) {
 
     ret = scanf("%ld", &max);
 
-    if (ret < 1)
+    if (ret < 1) {
+        scanf("%*[^\n]");
         exit_code += 1;
+    }
 
     if (exit_code > 0)
         return exit_code;
