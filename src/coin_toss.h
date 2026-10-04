@@ -3,6 +3,6 @@
 
 #include "random.h"
 
-int coin_toss(seed_t *seed);
+int coin_toss(seed_t *seed, bool in_alternate_screen);
 
 #endif
