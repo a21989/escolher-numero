@@ -3,6 +3,12 @@
 #include <inttypes.h>
 #include <stdio.h>
 
+void print_random_numbers(int64_t min, int64_t max, int64_t n, seed_t *seed) {
+    for (int64_t i = 0; i < n; i++) {
+        printf("%ld\n", get_random_number(min, max, seed));
+    }
+}
+
 int choose_number(seed_t *seed, int exit_code) {
     clear_screen_and_move_cursor_to_start();
 
@@ -68,9 +74,7 @@ int choose_number(seed_t *seed, int exit_code) {
     enable_line_buffer();
     leave_alternate_screen();
 
-    for (int64_t i = 0; i < n; i++) {
-        printf("%ld\n", get_random_number(min, max, seed));
-    }
+    print_random_numbers(min, max, n, seed);
 
     return exit_code;
 }
