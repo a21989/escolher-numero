@@ -64,7 +64,7 @@ int handle_args(int argc, char *argv[], seed_t *seed) {
                 ret = 1;
             } else {
                 seed_rng(seed);
-                print_random_numbers(min, max, n, seed);
+                print_random_numbers(n, min, max, seed);
             }
         }
     } else if (strcmp(argv[1], "2") == 0) {
