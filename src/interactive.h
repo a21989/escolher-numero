@@ -3,6 +3,8 @@
 
 #include "random.h"
 
-int interactive(seed_t *seed);
+int interactive(int mode, seed_t *seed);
+
+int handle_args(int argc, char *argv[], seed_t *seed);
 
 #endif
