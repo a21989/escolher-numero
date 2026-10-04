@@ -1,0 +1,24 @@
+{
+    "name": "random",
+    "version": "0.4.1",
+    "repo": "goodcleanfun/random",
+    "description": "Random number generation using the xoshiro256++ family for ints and xoshiro256+ for floats",
+    "keywords": [],
+    "license": "MIT",
+    "dependencies": {
+        "goodcleanfun/spinlock": "*"
+    },
+    "development": {
+        "silentbicycle/greatest": "*"
+    },
+    "src": [
+        "src/rand_float.h",
+        "src/rand_double.h",
+        "src/rand_os.h",
+        "src/rand_seed.h",
+        "src/rand_u32.h",
+        "src/rand_u64.h",
+        "src/rotl.h"
+    ]
+    
+  }
