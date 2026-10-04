@@ -7,4 +7,8 @@ void enter_alternate_screen();
 
 void leave_alternate_screen();
 
+int disable_buffer();
+
+int enable_line_buffer();
+
 #endif

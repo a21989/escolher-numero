@@ -12,6 +12,7 @@ int coin_toss(seed_t *seed) {
 
     bool cara = (bool)number;
 
+    enable_line_buffer();
     leave_alternate_screen();
 
     return puts(cara ? "○ cara" : "● coroa");

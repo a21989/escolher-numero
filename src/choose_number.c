@@ -65,6 +65,7 @@ int choose_number(seed_t *seed, int exit_code) {
     if (exit_code > 0)
         return exit_code;
 
+    enable_line_buffer();
     leave_alternate_screen();
 
     for (int64_t i = 0; i < n; i++) {

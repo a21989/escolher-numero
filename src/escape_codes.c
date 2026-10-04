@@ -4,6 +4,14 @@
 // https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
 // https://rosettacode.org/wiki/Terminal_control/Preserve_screen
 
+int disable_buffer() {
+    return setvbuf(stdout, NULL, _IONBF, 0);
+}
+
+int enable_line_buffer() {
+    return setvbuf(stdout, NULL, _IOLBF, 32);
+}
+
 void clear_screen_and_move_cursor_to_start() {
     printf("\033[2J\033[H");
 }

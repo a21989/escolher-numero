@@ -14,6 +14,7 @@
 int main(void) {
     seed_t *seed = (seed_t *)malloc(sizeof(seed_t));
 
+    disable_buffer();
     enter_alternate_screen();
 
     int ret;
