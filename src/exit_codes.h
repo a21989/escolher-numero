@@ -1,0 +1,9 @@
+#ifndef EXIT_CODES_H
+#define EXIT_CODES_H
+
+#include <stdlib.h>
+
+#define EXIT_TEMPORARY_OR_UNDETERMINED -1
+#define EXIT_INVALID_OR_INSUFFICIENT_ARGUMENTS 2
+
+#endif
